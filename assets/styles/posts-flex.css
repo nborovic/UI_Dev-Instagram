@@ -1,0 +1,27 @@
+.main__posts-wrapper {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: space-around;
+}
+
+.main__posts {
+    width: 33%;
+}
+
+.post__img {
+    width: 100%;
+    max-width: 293px;
+}
+
+@media screen and (min-width: 756px) {
+    .main__posts {
+        width: 30%;
+        margin: 15px 0;
+    }
+
+    main {
+        margin-top: 115px;
+    }
+}

@@ -1,0 +1,263 @@
+.post__extended {
+    width: 100%;
+    max-width: 935px;
+    background: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    overflow-y: scroll;
+    z-index: 99;
+}
+
+.post__extended--flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.post__extended__user {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+}
+
+.post__user__icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    background: url("../images/dump-logo.jpg");
+    background-size: contain;
+    border-radius: 50%;
+}
+
+.post__user__name {
+    color: #000;
+    font-weight: bold;
+}
+
+.post__user__dot-symbol {
+    margin: 0 5px;
+}
+
+.post__user__follow {
+    color: #3897f0;
+}
+
+.post__extended__img {
+    width: 100%;
+}
+
+.post__extended__img--copy {
+    width: 100%;
+    display: none;
+}
+
+.main__posts:hover .post__extended {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.main__posts:hover .website-overlay {
+    display: block;
+}
+
+.post__info {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    padding-bottom: 0;
+}
+
+.post__options {
+    position: relative;
+}
+
+.post__options > span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.info__like-icon {
+    background: url("../images/instagram-icons.png");
+    background-size: 263.41px;
+    background-repeat: no-repeat;
+    background-position: -97px -150px;
+}
+
+.info__comment-icon {
+    background: url("../images/instagram-icons.png");
+    background-size: 263.41px;
+    background-repeat: no-repeat;
+    background-position: -25px -125px; 
+}
+
+.info__share-icon {
+    background: url("../images/instagram-icons.png");
+    background-size: 263.41px;
+    background-repeat: no-repeat;
+    background-position: -170px -197px;
+}
+
+.info__save-icon {
+    background: url("../images/instagram-icons.png");
+    background-size: 263.41px;
+    background-repeat: no-repeat;
+    background-position: -47px -196px;
+    position: absolute;
+    right: 5px;
+}
+
+.post__like-counter {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.post__text {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.post__user {
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.post__tags {
+    color: #004e9c;
+}
+
+.post__comment {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.website-overlay {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    opacity: 0.45;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.post__date {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+    padding: 0 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #efefef;
+}
+
+.post__login {
+    display: none;
+    margin-top: 10px;
+    padding: 0 15px;
+}
+
+.post__login__text {
+    color: #999;
+}
+
+.post__login__link {
+    color: #004e9c;
+}
+
+@media screen and (min-width: 480px) {
+    .post__extended {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main__posts:hover .post__extended {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .post__options {
+        order: 3;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid #efefef;
+    }
+
+    .post__info {
+        padding: 0;
+    }
+
+    .post__text {
+        order: 1;
+    }
+
+    .post__comment {
+        order: 1;
+    }
+
+    .post__extended__img-container {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        background: #000;
+    }
+
+    .post__extended__img {
+        display: none;
+    }
+
+    .post__extended--flex {
+        width: 50%;
+        padding: 15px;
+    }
+
+    .post__extended__img--copy {
+        width: 100%;
+        max-width: 640px;
+        display: block;
+    }
+
+    .post__extended__user {
+        border-bottom: 1px solid #efefef;
+    }
+
+    .post__user__icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .post__date {
+        padding: 0;
+        padding-bottom: 5px;
+    }
+
+    .post__login {
+        display: block;
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .post__extended__img--copy {
+        width: 100%;
+    }
+
+    .post__extended__img-container {
+        width: 65%;
+    }
+
+    .post__extended--flex {
+        width: 35%;
+    }
+}
