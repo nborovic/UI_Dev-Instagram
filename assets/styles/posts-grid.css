@@ -1,13 +1,13 @@
 .main__posts-wrapper {
     margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: space-around;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 2.5px;
 }
 
 .main__posts {
-    width: 33%;
+    width: 100%;
 }
 
 .post__img {
@@ -17,9 +17,8 @@
 }
 
 @media screen and (min-width: 756px) {
-    .main__posts {
-        width: 30%;
-        margin: 15px 0;
+    .main__posts-wrapper {
+        grid-gap: 25px;
     }
 
     main {

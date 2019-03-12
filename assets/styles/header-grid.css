@@ -1,0 +1,138 @@
+header {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-areas: 
+    "img-container user"
+    "info info";
+}
+
+.header__user-icon {
+    width: 77px;
+    height: 77px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+.header__info {
+    grid-area: info;
+    margin-top: 30px;
+}
+
+.header__img-info {
+    grid-area: img-container;
+}
+
+.header__user {
+    grid-area: user;
+}
+
+.header__username {
+    font-size: 28px;
+    font-weight: normal;
+    color: #262626;
+    margin-right: 15px;
+}
+
+.header__follow-button {
+    color: #fff;
+    background: #3897f0;
+    border-radius: 4px;
+    padding: 9px;
+    font-weight: bold;
+}
+
+.header__full-username {
+    font-weight: bold;
+}
+
+.header__bio {
+    font-weight: 400;
+}
+
+.info__link {
+    color: #003569;
+}
+
+.header__data {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    padding: 12px 0;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+}
+
+.header__data--copy {
+    display: none;
+    border: none;
+    margin: 8px 0;
+}
+
+.data__counter--copy {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.data__counter {
+    width: 100%;
+    position: relative;
+}
+
+.counter__text {
+    text-align: center;
+    color: #999999;
+}
+
+.counter__number {
+    text-align: center;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 736px) {
+    header {
+        grid-template-columns: min-content 1fr;
+        grid-template-rows: min-content min-content;
+        grid-template-areas: 
+        "img-container user"
+        "img-container info";
+    }
+
+    .fs-14 {
+        font-size: 16px;
+    }
+
+    .header__user-icon {
+        width: 150px;
+        height: 150px;
+        margin: 75px;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .header__info {
+        margin: 0;
+    }
+
+    .header__data {
+        display: none;
+    }
+
+    .header__data--copy {
+        display: block;
+    }
+
+    .header__info--copy {
+        display: none;
+    }
+
+    .header__username, .header__follow-button {
+        display: inline-block;
+    }
+
+    .header__follow-button {
+        display: inline-block;
+        position: relative;
+        bottom: 5px;
+    }
+}

@@ -1,23 +1,34 @@
 .post__extended {
     width: 100%;
     max-width: 935px;
+    display: none;
+    grid-template-areas:
+    "user"
+    "img"
+    "info";
+    max-width: 935px;
     background: #fff;
     position: fixed;
     top: 50%;
     left: 50%;
+    overflow: hidden;
     transform: translate(-50%, -50%);
-    display: none;
     z-index: 99;
 }
 
-.post__options--copy {
-    display: none;
+.post__extended--flex {
+    grid-area: info;
 }
 
 .post__extended__user {
+    grid-area: user;
     width: 100%;
     background: #fff;
     padding: 10px;
+}
+
+.post__extended__img-container {
+    grid-area: img;
 }
 
 .post__user__icon {
@@ -28,11 +39,6 @@
     background: url("../images/dump-logo.jpg");
     background-size: contain;
     border-radius: 50%;
-}
-
-.post__user__name, .post__user__dot-symbol, .post__user__follow {
-    position: relative;
-    bottom: 8px;
 }
 
 .post__user__name {
@@ -48,22 +54,12 @@
     color: #3897f0;
 }
 
-.post__extended__img-container {
-    overflow: hidden;
-}
-
 .post__extended__img {
     width: 100%;
 }
 
-.post__extended__img--copy {
-    width: 100%;
-    display: none;
-}
-
 .main__posts:hover .post__extended {
-    display: block;
-    overflow: auto;
+    display: grid;
 }
 
 .main__posts:hover .website-overlay {
@@ -71,11 +67,17 @@
 }
 
 .post__info {
+    display: grid;
+    grid-template-areas:
+    "options"
+    "text"
+    "comment";
     padding: 15px;
     padding-bottom: 0;
 }
 
 .post__options {
+    grid-area: options;
     position: relative;
 }
 
@@ -84,6 +86,11 @@
     width: 24px;
     height: 24px;
     margin-right: 5px;
+}
+
+.post__user__name, .post__user__dot-symbol, .post__user__follow {
+    position: relative;
+    bottom: 8px;
 }
 
 .info__like-icon {
@@ -123,6 +130,7 @@
 }
 
 .post__text {
+    grid-area: text;
     font-size: 14px;
     margin-top: 10px;
 }
@@ -138,6 +146,7 @@
 }
 
 .post__comment {
+    grid-area: comment;
     margin-top: 10px;
     font-size: 14px;
 }
@@ -155,6 +164,7 @@
 }
 
 .post__date {
+    grid-area: date;
     font-size: 12px;
     color: #999;
     margin-top: 10px;
@@ -184,20 +194,30 @@
 }
 
 @media screen and (min-width: 768px) {
+    .post__extended {    
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+        "img user"
+        "img info";
+    }
+
     .post__options {
         order: 3;
         margin-top: 15px;
         padding-top: 15px;
         border-top: 1px solid #efefef;
-        display: none;
-    }
-
-    .post__info {
-        padding: 0;
     }
 
     .post__user__name, .post__user__dot-symbol, .post__user__follow {
         bottom: 15px;
+    }
+
+    .post__info {
+        grid-template-areas:
+        "text"
+        "comment"
+        "options";
+        padding: 0;
     }
 
     .post__text {
@@ -209,34 +229,26 @@
     }
 
     .post__extended__img-container {
-        height: 100%;
-        width: 50%;
+        width: 100%;
         background: #000;
-        float: left;
-        position: absolute;
+        position: relative;
     }
 
     .post__extended__img {
-        display: none;
-    }
-
-    .post__extended--flex {
-        width: 50%;
-        padding: 15px;
-        float: right;
-    }
-
-    .post__extended__img--copy {
-        width: 100%;
-        max-width: 640px;
-        display: block;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
     }
 
+    .post__extended--flex {
+        padding: 15px;
+    }
+
     .post__extended__user {
+        width: 90%;
+        margin: auto;
         border-bottom: 1px solid #efefef;
+        padding: 25px 10px 10px 10px;
     }
 
     .post__user__icon {
@@ -250,25 +262,14 @@
     }
 
     .post__login {
+        grid-area: login;
         display: block;
         padding: 0;
-    }
-
-    .post__options--copy {
-        display: block;
     }
 }
 
 @media screen and (min-width: 1024px) {
-    .post__extended__img--copy {
-        width: 100%;
-    }
-
-    .post__extended__img-container {
-        width: 65%;
-    }
-
-    .post__extended--flex {
-        width: 35%;
+    .post__extended {
+        grid-template-columns: 65% 35%;
     }
 }
