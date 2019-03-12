@@ -1,0 +1,26 @@
+.main__posts-wrapper {
+    margin: auto;
+}
+
+.main__posts {
+    width: 33%;
+    margin: 0.16%;
+    float: left;
+}
+
+.post__img {
+    width: 100%;
+    max-width: 293px;
+    float: left; /* Just to remove small gap after img */
+}
+
+@media screen and (min-width: 756px) {
+    .main__posts {
+        width: 30%;
+        margin: 1.665%;
+    }
+
+    main {
+        margin-top: 115px;
+    }
+}
