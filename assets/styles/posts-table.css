@@ -1,0 +1,34 @@
+.main__posts-wrapper {
+    margin: auto;
+    display: table;
+    border-spacing: 2.5px;
+}
+
+.posts__row {
+    display: table-row;
+}
+
+.main__posts {
+    display: table-cell;
+    width: 33%;
+}
+
+.post__img {
+    width: 100%;
+    max-width: 293px;
+    float: left; /* Just to remove small gap after img */
+}
+
+@media screen and (min-width: 756px) {
+    .main__posts-wrapper {
+        border-spacing: 15px;
+    }
+
+    .main__posts {
+        width: 30%;
+    }
+
+    main {
+        margin-top: 115px;
+    }
+}
